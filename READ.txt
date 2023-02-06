@@ -1,0 +1,25 @@
+Carsmos 参赛使用说明书
+
+我们的代码在simulator.zip下，您需要解压，进入代码主目录；
+
+1 . 配置环境
+	1.1  环境依赖，请参考requirements.txt，
+		执行 pip install -r ./requirements.txt
+	1.2  确保你本地安装了carla 0.9.13；
+	1.3  请使用Python3.8 进行开发
+	1.4  请使用ubuntu20.04 进行开发
+
+2. 修改配置文件和环境变量：
+	2.1 我们提供了两个场景配置文件，分别是FollowLeadingVehicle.xosc 和LaneChangeSimple.xosc ，它们都可以在srunner/examples/目录下找到；
+2.2 配置环境变量
+export PYTHONPATH=$PYTHONPATH:Your_Path/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:Your_Path/carla/PythonAPI/carla:your_path/simulate/
+
+我們的base agent在simulator/autoagents/autonomous_agent.py，后续所有的参赛者都需要按照autonomous_agent来开发自己的agents；您也需要基于autonomous_agent来进行开发，your_dora_agent.py
+
+4. 运行命令，启动程序：
+
+python3 /home/zjx/1/dora_least/oasis/new/simulate/simulate.py  
+--openscenario ./srunner/examples/LaneChangeSimple.xosc 
+--agent your_dora_agent.py
+
+
